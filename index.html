@@ -190,7 +190,7 @@
                         <li>✅ Ejercicios paso a paso</li>
                         <li class="disabled">❌ Guía Anti-Inflamatoria</li>
                     </ul>
-                    <a href="https://pay.hotmart.com/V106802554R?checkoutMode=10&bid=1784586104443" class="cta-button outline-btn" target="_blank" onclick="fbq('track', 'AddToCart', {value: 7.99, currency: 'USD'});">
+                    <a href="https://pay.hotmart.com/V106802554R?checkoutMode=10&bid=1784586104443" class="cta-button outline-btn hotmart-link" target="_blank" onclick="fbq('track', 'AddToCart', {value: 7.99, currency: 'USD'});">
                         Comprar Básico
                         <span>Solo $7.99</span>
                     </a>
@@ -211,7 +211,7 @@
                         <li>✅ Ejercicios paso a paso</li>
                         <li class="highlight">🎁 Guía 15 Recetas Latinas Anti-Inflamatorias</li>
                     </ul>
-                    <a href="https://pay.hotmart.com/V106802554R?checkoutMode=10&bid=1784586104443" class="cta-button pulse" target="_blank" onclick="fbq('track', 'AddToCart', {value: 12.98, currency: 'USD'});">
+                    <a href="https://pay.hotmart.com/V106802554R?checkoutMode=10&bid=1784586104443" class="cta-button pulse hotmart-link" target="_blank" onclick="fbq('track', 'AddToCart', {value: 12.98, currency: 'USD'});">
                         QUIERO EL PLAN VIP
                         <span>Mejor costo-beneficio</span>
                     </a>
@@ -341,5 +341,24 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- UTMify: Repassa UTMs para o Checkout da Hotmart -->
+    <script>
+    (function() {
+        var params = new URLSearchParams(window.location.search);
+        var src = params.get('utm_source') || 'facebook';
+        var campaign = params.get('utm_campaign') || 'cerodolor';
+        var medium = params.get('utm_medium') || 'cpc';
+        var content = params.get('utm_content') || '';
+        var sck = src + '_' + campaign + (content ? '_' + content : '');
+
+        document.querySelectorAll('.hotmart-link').forEach(function(link) {
+            var url = new URL(link.href);
+            url.searchParams.set('src', src);
+            url.searchParams.set('sck', sck);
+            link.href = url.toString();
+        });
+    })();
+    </script>
 </body>
 </html>

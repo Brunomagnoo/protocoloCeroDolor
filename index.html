@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -16,6 +16,24 @@
       a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
       document.head.appendChild(a);
     </script>
+
+    <!-- Meta Pixel -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1543661113562768');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1543661113562768&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel -->
 </head>
 <body>
 
@@ -42,10 +60,11 @@
                 <h1>Elimina el Dolor de Ciática en <strong>14 Días</strong> Sin Medicamentos.</h1>
                 <p class="subtitle">El único protocolo guiado paso a paso, diseñado para descomprimir tu nervio ciático en casa, dedicando solo 10 minutos al día.</p>
                 
-                <a href="#checkout" class="cta-button pulse">
-                    QUIERO ELIMINAR EL DOLOR HOY MISM0
+                <a href="#checkout" class="cta-button pulse" onclick="fbq('track', 'InitiateCheckout');">
+                    QUIERO ELIMINAR EL DOLOR HOY MISMO
                     <span>Oferta exclusiva por $7.99</span>
                 </a>
+                <p style="text-align:center;font-size:11px;color:#94a3b8;margin-top:6px;margin-bottom:0;">*Precio en USD. Conversión automática a tu moneda local al pagar.</p>
 
                 <div class="social-proof">
                     <div class="sp-avatars">
@@ -171,10 +190,11 @@
                         <li>✅ Ejercicios paso a paso</li>
                         <li class="disabled">❌ Guía Anti-Inflamatoria</li>
                     </ul>
-                    <a href="https://pay.hotmart.com/V106802554R?checkoutMode=10&bid=1784586104443" class="cta-button outline-btn" target="_blank">
+                    <a href="https://pay.hotmart.com/V106802554R?checkoutMode=10&bid=1784586104443" class="cta-button outline-btn" target="_blank" onclick="fbq('track', 'AddToCart', {value: 7.99, currency: 'USD'});">
                         Comprar Básico
                         <span>Solo $7.99</span>
                     </a>
+                    <p style="text-align:center;font-size:11px;color:#94a3b8;margin-top:6px;margin-bottom:0;">*Conversión automática a tu moneda local.</p>
                 </div>
 
                 <!-- Plano VIP -->
@@ -191,10 +211,11 @@
                         <li>✅ Ejercicios paso a paso</li>
                         <li class="highlight">🎁 Guía 15 Recetas Latinas Anti-Inflamatorias</li>
                     </ul>
-                    <a href="https://pay.hotmart.com/V106802554R?checkoutMode=10&bid=1784586104443" class="cta-button pulse" target="_blank">
+                    <a href="https://pay.hotmart.com/V106802554R?checkoutMode=10&bid=1784586104443" class="cta-button pulse" target="_blank" onclick="fbq('track', 'AddToCart', {value: 12.98, currency: 'USD'});">
                         QUIERO EL PLAN VIP
                         <span>Mejor costo-beneficio</span>
                     </a>
+                    <p style="text-align:center;font-size:11px;color:#94a3b8;margin-top:6px;margin-bottom:0;">*Conversión automática a tu moneda local.</p>
                 </div>
             </div>
 
@@ -322,5 +343,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-

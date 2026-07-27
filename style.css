@@ -165,7 +165,7 @@ body {
     letter-spacing: 1px;
 }
 
-.sp-half { color: #475569; position: relative; }
+.sp-half { color: #475569; position: relative; display: inline-block; }
 .sp-half::before {
     content: '★'; position: absolute; left: 0; top: 0;
     width: 50%; overflow: hidden; color: #FBBF24;
